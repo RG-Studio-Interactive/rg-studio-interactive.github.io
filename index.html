@@ -53,25 +53,39 @@
       border-left: 4px solid #6bb6ff;
     }
 
-
-    /* Developer Info Section */
+    
     .developer-info {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
       margin-bottom: 25px;
       flex-wrap: wrap;
+    }
+    
+    .developer-info > * {
+      margin: 0 10px; /* horizontal margin replaces gap */
     }
     
     .developer-photo {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      object-fit: cover;
       border: 3px solid #6bb6ff;
       box-shadow: 0 4px 12px rgba(107, 182, 255, 0.15);
+      overflow: hidden; /* clip the image inside the rounded border */
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
+    
+    /* If your developer photo is an <img> element inside .developer-photo container, use: */
+    .developer-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* for modern browsers; fallback on older devices during cropping */
+    }
+
     
     .developer-text h3 {
       color: #57e8e1;
