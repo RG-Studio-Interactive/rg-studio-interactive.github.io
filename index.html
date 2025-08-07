@@ -6,84 +6,102 @@
   <title>RG Studio Interactive - Εφαρμογή Σχολής Οδηγών</title>
   <style>
     body {
-      background: #181a20;
-      color: #fff;
+      background: linear-gradient(135deg, #181a20 0%, #222a36 100%);
+      color: #f4f6fa;
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       line-height: 1.6;
       padding: 20px;
     }
-
+    
     .container {
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
     }
-
+    
+    /* Logo Styles */
     .logo {
       max-width: 200px;
       margin: 20px 0;
-      opacity: 0.9;
+      opacity: 0.95;
     }
-
+    
+    /* Headings */
     h1 {
       font-size: 2.5rem;
-      color: #4a90e2;
+      color: #6bb6ff;
       margin-bottom: 30px;
       letter-spacing: 1px;
+      text-shadow: 0 2px 16px rgba(74,144,226,0.10);
     }
-
+    
     h2 {
       font-size: 1.8rem;
-      color: #6bb6ff;
+      color: #57e8e1;
       margin: 40px 0 20px 0;
+      text-shadow: 0 2px 10px rgba(87,232,225,0.07);
     }
-
+    
+    /* Introduction Box */
     .intro {
       font-size: 1.2rem;
       margin-bottom: 40px;
-      background: rgba(74, 144, 226, 0.1);
+      background: linear-gradient(90deg, rgba(51,96,173,0.09), rgba(47,211,244,0.06));
       padding: 25px;
       border-radius: 10px;
-      border-left: 4px solid #4a90e2;
+      border-left: 4px solid #6bb6ff;
     }
-
+    
+    /* Demo Sections - Alternating backgrounds for visual variety */
+    .demo-section:nth-child(even) {
+      background: rgba(113, 48, 175, 0.10); /* soft violet */
+    }
+    .demo-section:nth-child(odd) {
+      background: rgba(47, 211, 244, 0.07); /* soft cyan */
+    }
     .demo-section {
       margin: 40px 0;
-      background: rgba(255, 255, 255, 0.05);
       padding: 30px;
       border-radius: 15px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
-
+    
+    /* Demo Image */
     .demo-image {
       max-width: 300px;
       width: 90%;
       height: auto;
       border-radius: 15px;
       margin: 20px 0;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 24px rgba(47,211,244,0.085), 0 2px 8px rgba(0,0,0,0.12);
     }
-
+    
+    /* Text blocks in demo */
     .demo-text {
       font-size: 1.1rem;
       margin: 20px 0;
       padding: 0 20px;
+      color: #e4e7ee;
     }
-
+    
+    /* Closing Section */
     .closing {
       font-size: 1.3rem;
       margin-top: 50px;
       padding: 30px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #6bb6ff 0%, #764ba2 100%);
       border-radius: 15px;
       color: #fff;
+      box-shadow: 0 2px 18px rgba(118,75,162,0.07);
     }
-
+    
+    /* Schools */
     .school-names {
       font-weight: bold;
-      color: #4a90e2;
+      color: #57e8e1;
     }
-
+    
     .visitor-counter {
       margin-top: 30px;
       font-size: 0.9rem;
