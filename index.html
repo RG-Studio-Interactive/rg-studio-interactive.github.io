@@ -89,43 +89,40 @@
     .info-panel {
       margin: 40px auto;
       max-width: 600px;
-      padding: 26px 26px 20px 26px;
-      border-radius: 18px;
-      background: linear-gradient(120deg, #30384f 0%, #6bb6ff 100%);
-      box-shadow: 0 4px 36px rgba(47,211,244,0.06), 0 1.5px 10px rgba(74, 144, 226, 0.08);
+      padding: 25px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, rgba(51,96,173,0.09), rgba(47,211,244,0.06));
+      border-left: 4px solid #6bb6ff;
       color: #f2f7fa;
       text-align: center;
-      position: relative;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.05);
     }
-    .info-panel::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 5px;
-      background: linear-gradient(90deg, rgba(51,96,173,0.09), rgba(47,211,244,0.06));
-      border-radius: 18px 0 0 18px;
-    }
+    
+    /* Optional: Headline inside panel */
     .info-panel h2 {
-      color: #57e8e1;
-      font-size: 1.45rem;
-      margin: 0 0 16px 0;
-      letter-spacing: 1px;
-      text-shadow: 0 3px 15px rgba(87,232,225,0.08);
+      color: #6bb6ff;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
     }
+    
+    /* Optional: Paragraphs */
     .info-panel p {
-      color: #e4e7ee;
       font-size: 1.05rem;
-      margin: 10px 0;
+      margin: 12px 0;
+      color: #e6ecf5;
     }
+    
+    /* Optional: Link styling */
     .info-panel a {
-      color: #4a90e2; 
+      color: #4a90e2;
       font-weight: bold;
       text-decoration: underline;
-      transition: color 0.18s;
     }
     .info-panel a:hover {
       color: #57e8e1;
     }
+
     
     /* Schools */
     .school-names {
