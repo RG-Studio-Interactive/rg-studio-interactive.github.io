@@ -74,17 +74,35 @@
   <div class="container">
     <img src="assets/images/RG-Studio-Interactive-light-logo.png" alt="RG Studio Interactive logo" class="logo">
     <h1>Επικοινωνήστε μαζί μας</h1>
-    <p>Συμπληρώστε τη φόρμα ή στείλτε απευθείας email στο <b>info@rgstudiointeractive.com</b>.</p>
-    <form>
+    <p>Συμπληρώστε τη φόρμα ή στείλτε απευθείας email στο <b>rgstudiointeractive@gmail.com</b>.</p>
+    <form action="https://formspree.io/f/mabc1234" method="POST">
       <input type="text" name="name" placeholder="Όνομα" required>
       <input type="email" name="email" placeholder="Email" required>
       <textarea name="message" placeholder="Το μήνυμά σας" required></textarea>
-      <button type="submit" disabled>Αποστολή (Μη διαθέσιμο σε static site)</button>
+      <button type="submit">Αποστολή</button>
     </form>
-    <p style="opacity:0.7; font-size:0.95rem; margin-top:18px">
-      * Για να λειτουργήσει η φόρμα σε GitHub Pages, χρειάζεται σύνδεση με εξωτερικό service (π.χ. Formspree, Google Forms).  
-      Προς το παρόν, επικοινωνήστε στο email παραπάνω.
-    </p>
+    <script>
+      window.addEventListener("DOMContentLoaded", function() {
+        var form = document.querySelector("form");
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          var data = new FormData(form);
+          fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+              'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              form.innerHTML = "<p style='color:#4a90e2;font-size:1.2rem;'>Ευχαριστούμε! Το μήνυμά σας εστάλη με επιτυχία.</p>";
+            } else {
+              form.innerHTML = "<p style='color:red;font-size:1.1rem;'>Παρουσιάστηκε πρόβλημα. Δοκιμάστε ξανά αργότερα.</p>";
+            }
+          });
+        });
+      });
+    </script>
   </div>
 </body>
 </html>
