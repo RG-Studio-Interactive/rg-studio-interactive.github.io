@@ -142,14 +142,9 @@
     .carousel-wrapper {
       position: relative;
       margin: 40px 0;
-      overflow: visible;
-      display: flex;
-      flex-direction: column;
-    }
-    .carousel-container {
       overflow: hidden;
-      width: 100%;
     }
+    
     .carousel {
       display: flex;
       gap: 20px;
@@ -157,30 +152,49 @@
       scroll-snap-type: x mandatory;
       padding-bottom: 10px;
       scroll-behavior: smooth;
-      align-items: flex-start;
+      align-items: flex-start; /* This keeps individual height per slide (can tweak) */
     }
-    .carousel::-webkit-scrollbar { display: none; }
-
-    .demo-panel {
-      flex: 0 0 100%;
-      scroll-snap-align: center;
+    
+    .carousel::-webkit-scrollbar {
+      display: none;
     }
+    
+    /* Each section (slide) */
     .demo-section {
       flex: 0 0 80%;
       scroll-snap-align: center;
       background: rgba(51,96,173,0.09);
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
       text-align: center;
-      margin: 0;
+      margin: 0; /* no vertical margin so height doesn't expand unnecessarily */
     }
     
+    /* Images inside slides */
+    .demo-image {
+      max-width: 300px;
+      width: 90%;
+      height: auto;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 8px 24px rgba(47, 211, 244, 0.085), 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+    
+    /* Text section in slides */
+    .demo-text {
+      font-size: 1.1rem;
+      margin: 20px 0;
+      padding: 0 20px;
+      color: #e4e7ee;
+    }
+    
+    /* Carousel navigation buttons */
     .carousel-nav {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(40,48,64,0.8);
+      background: rgba(40, 48, 64, 0.8);
       border: none;
       color: #f4f6fa;
       font-size: 2rem;
@@ -188,9 +202,14 @@
       cursor: pointer;
       z-index: 10;
     }
-    .carousel-nav.prev { left: 0; }
-    .carousel-nav.next { right: 0; }
+    .carousel-nav.prev {
+      left: 0;
+    }
+    .carousel-nav.next {
+      right: 0;
+    }
     
+    /* "Hint" below carousel (e.g. swipe to view) */
     .carousel-hint {
       position: absolute;
       bottom: 8px;
@@ -200,34 +219,7 @@
       opacity: 0.7;
       pointer-events: none;
     }
-    
-    .demo-section {
-      background: rgba(51,96,173,0.09);
-      margin: 40px 0;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      margin: 0 auto;
-      width: 100px;
-    }
-    
-    /* Demo Image */
-    .demo-image {
-      max-width: 300px;
-      width: 90%;
-      height: auto;
-      border-radius: 15px;
-      margin: 20px 0;
-      box-shadow: 0 8px 24px rgba(47,211,244,0.085), 0 2px 8px rgba(0,0,0,0.12);
-    }
-    
-    /* Text blocks in demo */
-    .demo-text {
-      font-size: 1.1rem;
-      margin: 20px 0;
-      padding: 0 20px;
-      color: #e4e7ee;
-    }
+
     
     /* Closing Section */
     .info-panel {
@@ -396,9 +388,7 @@
 
     <div class="carousel-wrapper">
       <button class="carousel-nav prev">‹</button>
-      <div class="carousel-container">
       <div class="carousel">
-        <div class="demo-panel">
         <div class="demo-section">
           <h2>Κεντρικό Μενού Εφαρμογής</h2>
           <div class="demo-text">
@@ -409,9 +399,7 @@
           </div>
           <img src="assets/images/driving-demo-1.png" alt="Κεντρικό Μενού Εφαρμογής" class="demo-image">
         </div>
-        </div>
-
-        <div class="demo-panel">
+          
         <div class="demo-section">
           <h2>Προσομοιωτικές Εξετάσεις</h2>
           <div class="demo-text">
@@ -422,9 +410,7 @@
           </div>
           <img src="assets/images/driving-demo-2.png" alt="Κατηγορίες Διπλώματος" class="demo-image">
         </div>
-        </div>
-
-        <div class="demo-panel">
+          
         <div class="demo-section">
           <h2>Διαδραστικές Ερωτήσεις</h2>
           <div class="demo-text">
@@ -435,9 +421,7 @@
           <img src="assets/images/driving-demo-3.png" alt="Διαδραστικές Ερωτήσεις" class="demo-image">
           <img src="assets/images/driving-demo-4.png" alt="Πίνακες Κίνησης" class="demo-image">
         </div>
-        </div>
-
-        <div class="demo-panel">
+          
         <div class="demo-section">
           <h2>Δυνατότητα Πολλών γλωσσών</h2>
           <div class="demo-text">
@@ -447,9 +431,7 @@
           </div>
           <img src="assets/images/driving-demo-5.png" alt="Πίνακες Κίνησης" class="demo-image">
         </div>
-        </div>
 
-        <div class="demo-panel">
         <div class="demo-section">
           <h2>Αποτελέσματα και Ανάλυση</h2>
           <div class="demo-text">
@@ -460,9 +442,7 @@
           <img src="assets/images/driving-demo-6.png" alt="Αποτελέσματα Εξέτασης" class="demo-image">
           <img src="assets/images/driving-demo-7.png" alt="Λεπτομέρειες ερώτησης" class="demo-image">
         </div>
-        </div>
-
-        <div class="demo-panel">
+        
         <div class="demo-section">
           <h2>Επεξήγηση ερώτησης</h2>
           <div class="demo-text">
@@ -474,7 +454,6 @@
         </div>
         </div>
 
-        <div class="demo-panel">
         <div class="demo-section">
           <h2>Στατιστικά Προόδου</h2>
           <div class="demo-text">
@@ -484,9 +463,7 @@
           </div>
           <img src="assets/images/driving-demo-9.png" alt="Στατιστικά Προόδου" class="demo-image">
         </div>
-        </div>
-
-        <div class="demo-panel">
+          
         <div class="demo-section">
           <h2>Αναζήτηση Χρήστη</h2>
           <div class="demo-text">
@@ -496,9 +473,7 @@
           </div>
           <img src="assets/images/driving-demo-10.png" alt="Αναζήτηση Χρήστη" class="demo-image">
         </div>
-        </div>
-
-        <div class="demo-panel">
+          
         <div class="demo-section">
           <h2>Ανά κεφάλαιο</h2>
           <div class="demo-text">
@@ -508,9 +483,7 @@
           </div>
           <img src="assets/images/driving-demo-11.png" alt="Ανα κεφάλαιο" class="demo-image">
         </div>
-        </div>
-
-        <div class="demo-panel">
+          
         <div class="demo-section">
           <h2>Θεωρία</h2>
           <div class="demo-text">
@@ -519,8 +492,6 @@
           </div>
           <img src="assets/images/driving-demo-11.png" alt="Ανα κεφάλαιο" class="demo-image">
         </div>
-        </div>
-      </div>
       </div>
       <button class="carousel-nav next">›</button>
     <div class="carousel-hint">Σύρετε για να δείτε περισσότερα →</div>
@@ -531,7 +502,7 @@
     document.querySelectorAll('.carousel-nav').forEach(btn => {
       btn.addEventListener('click', () => {
         const carousel = document.querySelector('.carousel');
-        const scrollAmount = carousel.offsetWidth * 0.9; 
+        const scrollAmount = carousel.offsetWidth; 
         carousel.scrollBy({ left: btn.classList.contains('next') ? scrollAmount : -scrollAmount, behavior: 'smooth' });
       });
     });
