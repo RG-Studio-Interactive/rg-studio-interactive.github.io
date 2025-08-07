@@ -495,7 +495,7 @@
     document.querySelectorAll('.carousel-nav').forEach(btn => {
       btn.addEventListener('click', () => {
         const carousel = document.querySelector('.carousel');
-        const scrollAmount = carousel.offsetWidth * 0.8 + 20; 
+        const scrollAmount = carousel.offsetWidth + 20; 
         carousel.scrollBy({ left: btn.classList.contains('next') ? scrollAmount : -scrollAmount, behavior: 'smooth' });
       });
     });
