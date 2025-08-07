@@ -60,7 +60,7 @@
       background: rgba(47, 211, 244, 0.07); 
     } */
     .demo-section {
-      background: rgba(47, 211, 244, 0.07);
+      background: rgba(51,96,173,0.09);
       margin: 40px 0;
       padding: 30px;
       border-radius: 15px;
@@ -86,14 +86,45 @@
     }
     
     /* Closing Section */
-    .closing {
-      font-size: 1.3rem;
-      margin-top: 50px;
-      padding: 30px;
-      background: linear-gradient(135deg, #6bb6ff 0%, #764ba2 100%);
-      border-radius: 15px;
-      color: #fff;
-      box-shadow: 0 2px 18px rgba(118,75,162,0.07);
+    .info-panel {
+      margin: 40px auto;
+      max-width: 600px;
+      padding: 26px 26px 20px 26px;
+      border-radius: 18px;
+      background: linear-gradient(120deg, #30384f 0%, #6bb6ff 100%);
+      box-shadow: 0 4px 36px rgba(47,211,244,0.06), 0 1.5px 10px rgba(74, 144, 226, 0.08);
+      color: #f2f7fa;
+      text-align: center;
+      position: relative;
+    }
+    .info-panel::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 5px;
+      background: linear-gradient(180deg, #4a90e2, #57e8e1);
+      border-radius: 18px 0 0 18px;
+    }
+    .info-panel h2 {
+      color: #57e8e1;
+      font-size: 1.45rem;
+      margin: 0 0 16px 0;
+      letter-spacing: 1px;
+      text-shadow: 0 3px 15px rgba(87,232,225,0.08);
+    }
+    .info-panel p {
+      color: #e4e7ee;
+      font-size: 1.05rem;
+      margin: 10px 0;
+    }
+    .info-panel a {
+      color: #4a90e2; 
+      font-weight: bold;
+      text-decoration: underline;
+      transition: color 0.18s;
+    }
+    .info-panel a:hover {
+      color: #57e8e1;
     }
     
     /* Schools */
@@ -215,7 +246,7 @@
       <img src="assets/images/driving-demo-9.png" alt="Αναζήτηση Χρήστη" class="demo-image">
     </div>
 
-  <div class="closing">
+  <div class="info-panel">
     <h2>Γιατί να Επιλέξετε την Εφαρμογή μας;</h2>
     <p>Η εφαρμογή έχει σχεδιαστεί με γνώμονα την εκπαιδευτική αποτελεσματικότητα και 
     την ευκολία χρήσης. Προσφέρει ολοκληρωμένη λύση για σχολές οδηγών που θέλουν να 
