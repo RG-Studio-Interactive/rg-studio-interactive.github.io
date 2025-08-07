@@ -142,9 +142,13 @@
     .carousel-wrapper {
       position: relative;
       margin: 40px 0;
-      overflow: hidden;
+      overflow: visible;
       display: flex;
       flex-direction: column;
+    }
+    .carousel-container {
+      overflow: hidden;
+      width: 100%;
     }
     .carousel {
       display: flex;
@@ -153,10 +157,14 @@
       scroll-snap-type: x mandatory;
       padding-bottom: 10px;
       scroll-behavior: smooth;
-      align-items: strech;
+      align-items: flex-start;
     }
     .carousel::-webkit-scrollbar { display: none; }
-    
+
+    .demo-panel {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+    }
     .demo-section {
       flex: 0 0 80%;
       scroll-snap-align: center;
@@ -199,7 +207,8 @@
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      margin: 0;
+      margin: 0 auto;
+      width: 100px;
     }
     
     /* Demo Image */
@@ -386,8 +395,10 @@
 
 
     <div class="carousel-wrapper">
-    <button class="carousel-nav prev">‹</button>
+      <button class="carousel-nav prev">‹</button>
+      <div class="carousel-container">
       <div class="carousel">
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Κεντρικό Μενού Εφαρμογής</h2>
           <div class="demo-text">
@@ -398,7 +409,9 @@
           </div>
           <img src="assets/images/driving-demo-1.png" alt="Κεντρικό Μενού Εφαρμογής" class="demo-image">
         </div>
-    
+        </div>
+
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Προσομοιωτικές Εξετάσεις</h2>
           <div class="demo-text">
@@ -409,7 +422,9 @@
           </div>
           <img src="assets/images/driving-demo-2.png" alt="Κατηγορίες Διπλώματος" class="demo-image">
         </div>
-    
+        </div>
+
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Διαδραστικές Ερωτήσεις</h2>
           <div class="demo-text">
@@ -420,7 +435,9 @@
           <img src="assets/images/driving-demo-3.png" alt="Διαδραστικές Ερωτήσεις" class="demo-image">
           <img src="assets/images/driving-demo-4.png" alt="Πίνακες Κίνησης" class="demo-image">
         </div>
-    
+        </div>
+
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Δυνατότητα Πολλών γλωσσών</h2>
           <div class="demo-text">
@@ -430,7 +447,9 @@
           </div>
           <img src="assets/images/driving-demo-5.png" alt="Πίνακες Κίνησης" class="demo-image">
         </div>
-    
+        </div>
+
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Αποτελέσματα και Ανάλυση</h2>
           <div class="demo-text">
@@ -441,7 +460,9 @@
           <img src="assets/images/driving-demo-6.png" alt="Αποτελέσματα Εξέτασης" class="demo-image">
           <img src="assets/images/driving-demo-7.png" alt="Λεπτομέρειες ερώτησης" class="demo-image">
         </div>
-    
+        </div>
+
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Επεξήγηση ερώτησης</h2>
           <div class="demo-text">
@@ -451,7 +472,9 @@
           </div>
           <img src="assets/images/driving-demo-8.png" alt="Επεξηγήση" class="demo-image">
         </div>
-    
+        </div>
+
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Στατιστικά Προόδου</h2>
           <div class="demo-text">
@@ -461,7 +484,9 @@
           </div>
           <img src="assets/images/driving-demo-9.png" alt="Στατιστικά Προόδου" class="demo-image">
         </div>
-    
+        </div>
+
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Αναζήτηση Χρήστη</h2>
           <div class="demo-text">
@@ -471,7 +496,9 @@
           </div>
           <img src="assets/images/driving-demo-10.png" alt="Αναζήτηση Χρήστη" class="demo-image">
         </div>
-    
+        </div>
+
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Ανά κεφάλαιο</h2>
           <div class="demo-text">
@@ -481,7 +508,9 @@
           </div>
           <img src="assets/images/driving-demo-11.png" alt="Ανα κεφάλαιο" class="demo-image">
         </div>
-    
+        </div>
+
+        <div class="demo-panel">
         <div class="demo-section">
           <h2>Θεωρία</h2>
           <div class="demo-text">
@@ -490,8 +519,10 @@
           </div>
           <img src="assets/images/driving-demo-11.png" alt="Ανα κεφάλαιο" class="demo-image">
         </div>
+        </div>
       </div>
-    <button class="carousel-nav next">›</button>
+      </div>
+      <button class="carousel-nav next">›</button>
     <div class="carousel-hint">Σύρετε για να δείτε περισσότερα →</div>
   </div>
 
